@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require './spellcorrection.rb'
+
+while 1
+  print "> "
+  puts gets.strip.correct
+end
