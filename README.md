@@ -91,7 +91,10 @@ Usage
 =====
 
 run `ruby generator.rb` to see the list of candidates
-`
+
+example:
+
+```
 aaAaAAaAaAL
 aaAaAAaaAAL
 aaAaAaAAAAl
@@ -115,6 +118,6 @@ aaaAAAaAAAl
 aaaAAAaAAaL
 aaaAAAaAaAL
 ...
-`
+```
 
 On the sidenote: I don't know why piping outputs from generator.rb into prompt didn't work but if I manually type it in while running prompt, it worked.
