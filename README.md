@@ -1,6 +1,8 @@
-== Ruby Spell Corrector
+Ruby Spell Corrector
+====================
 
-= Usage
+Usage
+-----
 
 run `bundle` to install dependencies.
 
@@ -12,7 +14,8 @@ if it doesn't work, try run `ruby prompt` while inside the folder.
 
 run `spec spec/array_extend_spec.rb` or `spec spec/string_extend_spec.rb` to test out the code once you finish the bundle command.
 
-= Challenge
+Challenge
+---------
 
 Write a program that reads a large list of English words (e.g. from /usr/share/dict/words on a unix system) into memory, and then reads words from stdin, and prints either the best spelling suggestion, or "NO SUGGESTION" if no suggestion can be found. The program should print ">" as a prompt before reading each word, and should loop until killed.
 
@@ -39,7 +42,8 @@ If there are many possible corrections of an input word, your program can choose
 
 Final step: Write a second program that *generates* words with spelling mistakes of the above form, starting with correctly spelled English words. Pipe its output into the first program and verify that there are no occurrences of "NO SUGGESTION" in the output.
 
-= Solution
+Solution
+--------
 
 spellcorrection.rb contains all the functions.
 
@@ -70,18 +74,21 @@ The corrector will first check to see if there is a key for the complete input, 
 
 The Levenshtein distance, the edit distance between two strings, is implemented in a dynamic programming fashion inspired by the implementation in the [wikipedia page](http://en.wikipedia.org/wiki/Levenshtein_distance) by constructing a matrix which hold the Levenshtein distance bewteen all prefixes of the first string and all prefixes of the second string, then by using dynamic programming we can determine the distance between two full strings as the last value computed.
 
-= Space and Time Analysis
+Space and Time Analysis
+-----------------------
 
 The implementation of Levenshtein distanace has a time complexity of O(n\*m) and space complexity of O(n\*m) where n and m are string lengths
 
 The runtime for every word correction is O(n\*m) where n is the length of the input and m is the length of the longest word in the dictionary since it takes constant time to find candidates, then it has to go through the Levenshtein distance to find out the best candidate.
 
 
-== Generator
+Generator
+=========
 
 A simple generator that generates word candidates based on the 3 classes of errors
 
-= Usage
+Usage
+=====
 
 run `ruby generator.rb` to see the list of candidates
 `
